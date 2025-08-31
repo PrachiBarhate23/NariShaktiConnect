@@ -1,6 +1,8 @@
 // src/pages/SafetyTips.jsx
 import React from 'react';
 import styles from './SafetyTips.module.css';
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 
 const SafetyTips = () => {
   return (

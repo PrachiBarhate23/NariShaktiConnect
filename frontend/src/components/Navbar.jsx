@@ -68,6 +68,19 @@ const Navbar = () => {
   </Link>
 </div>
 
+      <div className={`mobile-menu ${isMenuOpen ? 'mobile-menu-open' : ''}`}>
+  <Link to="/" className="mobile-link" onClick={closeMenu}>Home</Link>
+  <Link to="/our-work" className="mobile-link" onClick={closeMenu}>Our Work</Link>
+  <Link to="/resources" className="mobile-link" onClick={closeMenu}>Resources</Link>
+  <Link to="/my-rights" className="mobile-link" onClick={closeMenu}>My Rights</Link>
+  <Link to="/safety-tips" className="mobile-link" onClick={closeMenu}>Safety Tips</Link>
+  <Link to="/find-help" className="mobile-link" onClick={closeMenu}>Find Help</Link>
+
+  <Link to="/report-incident" onClick={closeMenu}>
+    <button className="mobile-report-btn">Report Incident</button>
+  </Link>
+</div>
+
     </nav>
   );
 };

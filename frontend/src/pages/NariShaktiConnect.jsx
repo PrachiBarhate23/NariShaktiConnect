@@ -121,6 +121,7 @@ const services = [
           .carousel-container {
             position: relative;
             max-width: 800px;
+            max-height: 800px;
             margin: 0 auto 40px;
             border-radius: 15px;
             overflow: hidden;
@@ -662,7 +663,6 @@ const services = [
           </div>
         </section>
       </div>
-      <Footer />
     </>
   );
 };

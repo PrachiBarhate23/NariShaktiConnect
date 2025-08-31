@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import './OurWork.css';
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 
 const OurWorkPage = () => {
   const [language, setLanguage] = useState('english');

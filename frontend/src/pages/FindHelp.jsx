@@ -274,7 +274,7 @@ const FindHelp = () => {
       </div>
 
       {/* Footer Space */}
-      <div className="footer-space"></div>
+  
     </div>
   );
 };
