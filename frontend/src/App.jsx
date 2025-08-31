@@ -1,20 +1,26 @@
 import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
+
+// Import pages
+import FindHelp from "./pages/FindHelp";
+import Resources from "./pages/Resources";
+import SafetyTips from "./pages/SafetyTips";
 import ReportIncident from "./pages/ReportIncident";
-import Resources from "./pages/Resources"; // Add this import
-import SafetyTips from "./pages/SafetyTips"; // Add this import
 
 function App() {
   return (
-    <div>
-      {/* Navbar visible on every page */}
+    <Router>
       <Navbar />
 
-      {/* Your main content */}
-      <FindHelp />
-      <Resources />      {/* Add Resources page */}
-      <SafetyTips />     {/* Add Safety Tips page */}
-    </div>
+      <Routes>
+        <Route path="/" element={<h1>Welcome to NariShaktiConnect</h1>} />
+        <Route path="/find-help" element={<FindHelp />} />
+        <Route path="/resources" element={<Resources />} />
+        <Route path="/safety-tips" element={<SafetyTips />} />
+        <Route path="/report-incident" element={<ReportIncident />} />
+      </Routes>
+    </Router>
   );
 }
 

@@ -2,7 +2,7 @@ import React, { useState, useMemo } from 'react';
 import { Search, Phone, MessageCircle, Globe, MapPin, Users } from 'lucide-react';
 import './FindHelp.css';
 import Navbar from '../components/Navbar';
-import Footer from '../components/Footer';
+//import Footer from '../components/Footer';
 
 const FindHelp = () => {
   const [isHindi, setIsHindi] = useState(false);
