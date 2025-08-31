@@ -272,11 +272,11 @@ const Footer = () => {
             <div className="footer-bottom">
               <div className="footer-bottom-content">
                 <p>&copy; 2025 Nari Shakti Connect. All rights reserved.</p>
-                <div className="footer-bottom-links">
-                  <a href="#privacy">Privacy Policy</a>
-                  <a href="#terms">Terms of Service</a>
+                {/* <div className="footer-bottom-links">
+                  <a href="./PrivacyPolicy">Privacy Policy</a>
+                  <a href="./TermsOfService">Terms of Service</a>
                   <a href="#accessibility">Accessibility</a>
-                </div>
+                </div> */}
               </div>
             </div>
           </div>
