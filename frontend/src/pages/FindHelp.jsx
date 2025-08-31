@@ -1,6 +1,8 @@
 import React, { useState, useMemo } from 'react';
 import { Search, Phone, MessageCircle, Globe, MapPin, Users } from 'lucide-react';
 import './FindHelp.css';
+//import Navbar from '../components/Navbar';
+
 const FindHelp = () => {
   const [isHindi, setIsHindi] = useState(false);
   const [searchTerm, setSearchTerm] = useState('');
