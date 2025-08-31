@@ -1,6 +1,8 @@
 import React from "react";
 import Navbar from "./components/Navbar";
-import FindHelp from "./pages/FindHelp"; // if you already made this page
+import FindHelp from "./pages/FindHelp";
+import Resources from "./pages/Resources"; // Add this import
+import SafetyTips from "./pages/SafetyTips"; // Add this import
 
 function App() {
   return (
@@ -10,9 +12,10 @@ function App() {
 
       {/* Your main content */}
       <FindHelp />
+      <Resources />      {/* Add Resources page */}
+      <SafetyTips />     {/* Add Safety Tips page */}
     </div>
   );
 }
 
 export default App;
-
