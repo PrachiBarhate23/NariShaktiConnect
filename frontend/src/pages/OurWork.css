@@ -1,0 +1,452 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Open+Sans:wght@400;500&display=swap');
+
+:root {
+  --transition: all 0.3s ease;
+  --sky-blue: #4FC3F7;
+  --sky-blue-hover: #29B6F6;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+.our-work-page {
+  min-height: 100vh;
+  background-color: #E3F2FD;
+  font-family: 'Open Sans', sans-serif;
+  color: #212121;
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+.header {
+  background: linear-gradient(135deg, #0288D1, #0277BD);
+  position: relative;
+  overflow: hidden;
+  padding: 2rem 1rem;
+  text-align: center;
+}
+
+.header-content {
+  position: relative;
+  z-index: 2;
+}
+
+.page-title {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 2.5rem;
+  color: white;
+  margin-bottom: 1rem;
+  animation: fadeInTitle 1s ease-out;
+}
+
+.header-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400"><rect width="800" height="400" fill="%23f0f9ff"/><circle cx="200" cy="150" r="30" fill="%234dd0e1" opacity="0.6"/><circle cx="600" cy="250" r="40" fill="%234fc3f7" opacity="0.4"/><rect x="100" y="300" width="600" height="2" fill="%230288d1" opacity="0.3"/></svg>') center/cover;
+  opacity: 0.1;
+}
+
+.blue-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(2, 136, 209, 0.2);
+}
+
+.language-toggle-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.language-toggle {
+  background: rgba(255, 255, 255, 0.2);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 2rem;
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  transition: var(--transition);
+  position: relative;
+  backdrop-filter: blur(15px);
+  min-width: 120px;
+  justify-content: space-between;
+}
+
+.toggle-option {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.8);
+  transition: var(--transition);
+  padding: 0.4rem 0.8rem;
+  border-radius: 1.5rem;
+  position: relative;
+  z-index: 2;
+}
+
+.toggle-divider {
+  color: rgba(255, 255, 255, 0.6);
+  font-weight: 300;
+}
+
+.toggle-slider {
+  position: absolute;
+  top: 0.5rem;
+  left: 0.5rem;
+  width: 50px;
+  height: 36px;
+  background: linear-gradient(135deg, var(--sky-blue), var(--sky-blue-hover));
+  border-radius: 1.5rem;
+  transition: var(--transition);
+  box-shadow: 0 2px 8px rgba(79, 195, 247, 0.4);
+  z-index: 1;
+}
+
+.language-toggle.hindi-active .toggle-slider {
+  transform: translateX(55px);
+}
+
+.language-toggle.english-active .toggle-option.english,
+.language-toggle.hindi-active .toggle-option.hindi {
+  color: white;
+  font-weight: 700;
+}
+
+.language-toggle:hover {
+  border-color: rgba(255, 255, 255, 0.5);
+  transform: scale(1.05);
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.main-content {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.content-card {
+  background: white;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 4px 15px rgba(2, 136, 209, 0.1);
+  transition: all 0.3s ease;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInCard 0.8s ease-out forwards;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.card-content-with-image {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+}
+
+.text-content {
+  flex: 2;
+}
+
+.image-placeholder {
+  flex: 1;
+  background: linear-gradient(135deg, #E3F2FD, #BBDEFB);
+  border-radius: 8px;
+  padding: 2rem 1rem;
+  text-align: center;
+  border: 2px dashed #4DD0E1;
+  transition: var(--transition);
+  min-height: 120px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.image-placeholder:hover {
+  background: linear-gradient(135deg, #BBDEFB, #90CAF9);
+  border-color: #0288D1;
+}
+
+.placeholder-icon {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.image-placeholder span {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  color: #0288D1;
+  font-size: 0.9rem;
+}
+
+.content-card:nth-child(1) {
+  animation-delay: 0.2s;
+}
+
+.content-card:nth-child(2) {
+  animation-delay: 0.4s;
+}
+
+.content-card:nth-child(3) {
+  animation-delay: 0.6s;
+}
+
+.content-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(2, 136, 209, 0.15);
+}
+
+.content-card h2 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  color: #0288D1;
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+.content-card h2::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 50px;
+  height: 3px;
+  background: linear-gradient(90deg, #4DD0E1, #4FC3F7);
+  border-radius: 2px;
+}
+
+.content-card ul {
+  list-style: none;
+  padding: 0;
+}
+
+.content-card li {
+  padding: 0.75rem 0;
+  position: relative;
+  padding-left: 2rem;
+  color: #212121;
+  line-height: 1.6;
+  transition: color 0.2s ease;
+}
+
+.content-card li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: #4DD0E1;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.content-card li:hover {
+  color: #0288D1;
+}
+
+.success-stories {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.success-story {
+  background: linear-gradient(135deg, #F8F9FA, #E8F5E8);
+  border-left: 4px solid #4DD0E1;
+  padding: 1.5rem;
+  border-radius: 8px;
+  font-style: italic;
+  color: #212121;
+  line-height: 1.6;
+  margin: 0;
+  opacity: 0;
+  transform: translateX(-20px);
+  animation: slideInStory 0.6s ease-out forwards;
+}
+
+.success-story:nth-child(1) {
+  animation-delay: 0.8s;
+}
+
+.success-story:nth-child(2) {
+  animation-delay: 1s;
+}
+
+.success-story:nth-child(3) {
+  animation-delay: 1.2s;
+}
+
+.success-story:nth-child(4) {
+  animation-delay: 1.4s;
+}
+
+.success-story:nth-child(5) {
+  animation-delay: 1.6s;
+}
+
+.impact-card {
+  background: linear-gradient(135deg, #4FC3F7, #29B6F6);
+  color: white;
+  border-radius: 12px;
+  padding: 2rem;
+  text-align: center;
+  box-shadow: 0 6px 20px rgba(79, 195, 247, 0.3);
+  transition: all 0.3s ease;
+  animation: fadeInCard 0.8s ease-out 0.8s both;
+}
+
+.impact-content {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 1.2rem;
+  line-height: 1.5;
+}
+
+.bounce-hover:hover {
+  animation: bounceEffect 0.6s ease;
+}
+
+/* Animations */
+@keyframes fadeInTitle {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInCard {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInStory {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes bounceEffect {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px);
+  }
+  60% {
+    transform: translateY(-5px);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .page-title {
+    font-size: 2rem;
+  }
+  
+  .main-content {
+    padding: 1.5rem 1rem;
+    gap: 1rem;
+  }
+  
+  .content-card {
+    padding: 1.5rem;
+  }
+  
+  .content-card h2 {
+    font-size: 1.3rem;
+  }
+  
+  .card-content-with-image {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .image-placeholder {
+    min-height: 80px;
+    padding: 1.5rem 1rem;
+  }
+  
+  .placeholder-icon {
+    font-size: 1.5rem;
+  }
+  
+  .impact-content {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .page-title {
+    font-size: 1.8rem;
+  }
+  
+  .content-card {
+    padding: 1rem;
+  }
+  
+  .content-card li {
+    padding-left: 1.5rem;
+    font-size: 0.9rem;
+  }
+  
+  .success-story {
+    padding: 1rem;
+    font-size: 0.9rem;
+  }
+  
+  .impact-content {
+    font-size: 0.9rem;
+    line-height: 1.4;
+  }
+  
+  .language-toggle {
+    min-width: 100px;
+  }
+  
+  .toggle-slider {
+    width: 40px;
+    height: 32px;
+  }
+  
+  .language-toggle.hindi-active .toggle-slider {
+    transform: translateX(45px);
+  }
+}
