@@ -1,6 +1,8 @@
 import React from "react";
 import Navbar from "./components/Navbar";
-import ReportIncident from "./pages/ReportIncident"; // if you already made this page
+import ReportIncident from "./pages/ReportIncident";
+import Resources from "./pages/Resources"; // Add this import
+import SafetyTips from "./pages/SafetyTips"; // Add this import
 
 function App() {
   return (
@@ -9,10 +11,11 @@ function App() {
       <Navbar />
 
       {/* Your main content */}
-      <ReportIncident />
+      <FindHelp />
+      <Resources />      {/* Add Resources page */}
+      <SafetyTips />     {/* Add Safety Tips page */}
     </div>
   );
 }
 
 export default App;
-
