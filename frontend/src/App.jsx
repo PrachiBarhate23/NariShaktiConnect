@@ -1,9 +1,13 @@
-import ReportIncident from "./pages/ReportIncident"
+// import ReportIncident from "./pages/ReportIncident"
+import NariShaktiConnect from "./pages/NariShaktiConnect"
+import TermsOfService from "./pages/TermsOfService"
 
 function App() {
   return (
     <div>
-      <ReportIncident />
+      {/* <ReportIncident /> */}
+      {/* <NariShaktiConnect /> */}
+      <TermsOfService />
     </div>
   )
 }
