@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "type": "module",
   "overrides": {
-  "@react-native/gradle-plugin": "0.74.83"
+    "@react-native/gradle-plugin": "0.74.83"
   },
   "scripts": {
     "dev": "vite",
