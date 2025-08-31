@@ -1,12 +1,74 @@
-# React + Vite
+# 🌸 Nari Shakti Connect
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Empowering women in the informal sector through safety, awareness, and accessible resources.
 
-Currently, two official plugins are available:
+# 🚀 About the Project
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Nari Shakti Connect is a mobile-first web application designed to address unreported workplace harassment, lack of awareness about rights, and inaccessibility of support resources faced by women in India’s informal sector.
 
-## Expanding the ESLint configuration
+The platform provides a discreet, simple, and reliable companion for women workers—helping them report incidents (simulated), learn their rights, access NGOs/legal aid directories, and stay safe with actionable tips.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+This is not just a student MVP—it has the potential to grow into a scalable startup idea, with clear social impact and market viability.
+
+# ✨ Features
+
+Simulated Discreet Reporting → A prototype incident reporting flow (with anonymity option).
+
+Simplified POSH & Labor Rights → Easy-to-understand legal and workplace rights info in Hindi/English.
+
+Curated NGO & Legal Aid Directory → Searchable static directory with call/WhatsApp connect simulation.
+
+Safety Tips → Actionable, pre-written safety guidelines for informal workers.
+
+Multi-Language Toggle → Basic support for Hindi and English text switch.
+
+# 🎁 Bonus Features (Beyond Problem Statement)
+
+Our Team Page → Showcasing contributors and their vision.
+
+Resources Section → Extra curated material (guides, awareness content, support links).
+
+# 🛠️ Tech Stack
+
+- Frontend: React.js
+- Styling: CSS Modules + Tailwind principles for responsiveness
+- Icons & UI: Lucide
+ for clean, accessible icons
+- Routing: React Router for smooth navigation
+- Development Tools: VS Code, Live Server, Chrome Dev Tools
+
+# 🌐 Deployment
+
+# 🔗 Live Demo: [Deployed Link Here] (replace with actual link)
+
+# 📈 Why This Works as a Startup
+
+- Large Addressable Market: Millions of women in India’s informal workforce face similar challenges.
+
+- Unique Value Proposition: Combines discretion, simplicity, and accessibility—filling a real gap in current reporting/support mechanisms.
+
+- Scalability: MVP currently runs on static content, but can easily expand into a full SaaS with real NGO integration, multilingual support, verified reporting, and AI-based guidance.
+
+- Impact & Trust: Acts as both a social-good platform and a sustainable business model, where NGOs, legal bodies, and even corporates could integrate for CSR/ESG alignment.
+
+# 📜 Limitations (MVP Stage)
+
+No backend → Reports are not actually sent, only simulated.
+
+Static NGO/Legal Aid directory → Currently hardcoded with demo entries.
+
+No real-time chat/call integration (simulation only).
+
+# 👩‍💻 Future Scope
+
+Real anonymized reporting system integrated with verified NGOs/legal bodies.
+
+Dynamic multilingual support (regional languages, voice assistance).
+
+Partnership model with NGOs, government bodies, and startups in the women’s safety domain.
+
+Expand into a trusted B2B/B2C product for workplace compliance and safety.
+
+# 🤝 Team & Contributions
+
+The project is built with passion by our team, combining tech for good with real-world social impact.
