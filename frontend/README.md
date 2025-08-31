@@ -39,7 +39,7 @@ Resources Section → Extra curated material (guides, awareness content, support
 
 # 🌐 Deployment
 
-# 🔗 Live Demo: [Deployed Link Here] (replace with actual link)
+# 🔗 Live Demo: [Deployed Link Here](https://nari-shakti-connect.vercel.app/)
 
 # 📈 Why This Works as a Startup
 
@@ -72,3 +72,8 @@ Expand into a trusted B2B/B2C product for workplace compliance and safety.
 # 🤝 Team & Contributions
 
 The project is built with passion by our team, combining tech for good with real-world social impact.
+By Team TechTitans =
+- Arushi Jain
+- Reetika Gupta
+- Prachi Barhate
+- Harsh Malpani
