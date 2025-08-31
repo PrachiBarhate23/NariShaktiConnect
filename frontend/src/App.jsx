@@ -1,11 +1,17 @@
-import ReportIncident from "./pages/ReportIncident"
+import React from "react";
+import Navbar from "./components/Navbar";
+import FindHelp from "./pages/FindHelp"; // if you already made this page
 
 function App() {
   return (
     <div>
-      <ReportIncident />
+      {/* Navbar visible on every page */}
+      <Navbar />
+
+      {/* Your main content */}
+      <FindHelp />
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
