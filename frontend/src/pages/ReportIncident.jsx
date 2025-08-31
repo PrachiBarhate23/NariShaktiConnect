@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './ReportIncident.css';
-// import Navbar from '../components/Navbar';
-// import Footer from '../components/Footer';
+import Navbar from '../components/Navbar';
+//import Footer from '../components/Footer';
 
 const ReportIncident = () => {
   const [language, setLanguage] = useState('english');
@@ -216,7 +216,6 @@ const ReportIncident = () => {
                 हिंदी
               </button>
             </div>
-            <button className="close-btn">×</button>
           </div>
         </div>
 

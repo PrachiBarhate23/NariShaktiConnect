@@ -66,30 +66,6 @@ body {
   color: var(--secondary-azure);
 }
 
-.close-btn {
-  background: linear-gradient(135deg, #f8faff, #e8f4fd);
-  border: 2px solid rgba(224, 224, 224, 0.6);
-  font-size: 1.5rem;
-  color: var(--neutral-subtext-gray);
-  cursor: pointer;
-  padding: 0.5rem;
-  border-radius: 10px;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  width: 40px;
-  height: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-}
-
-.close-btn:hover {
-  color: var(--neutral-dark-gray);
-  border-color: var(--primary-sky-blue);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 15px rgba(79, 195, 247, 0.2);
-}
-
 /* Form Styles */
 .incident-form {
   background: linear-gradient(145deg, var(--neutral-white), #f8faff);

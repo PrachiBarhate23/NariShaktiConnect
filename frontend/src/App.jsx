@@ -1,6 +1,6 @@
 import React from "react";
 import Navbar from "./components/Navbar";
-import FindHelp from "./pages/FindHelp"; // if you already made this page
+import ReportIncident from "./pages/ReportIncident"; // if you already made this page
 
 function App() {
   return (
@@ -9,7 +9,7 @@ function App() {
       <Navbar />
 
       {/* Your main content */}
-      <FindHelp />
+      <ReportIncident />
     </div>
   );
 }
