@@ -1,0 +1,926 @@
+/* src/pages/SafetyTips.module.css - Enhanced with Uniform Dimensions and Scrollbar Fix */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  width: 100%;
+  overflow-x: hidden;
+  scrollbar-gutter: stable;
+}
+
+body {
+  width: 100%;
+  overflow-x: hidden;
+  scrollbar-width: thin;
+  scrollbar-color: #4FC3F7 #E3F2FD;
+}
+
+/* Custom Scrollbar for Webkit browsers */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #E3F2FD;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #4FC3F7, #0288D1);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #0288D1, #4FC3F7);
+}
+
+.safetyTipsContainer {
+  width: 100%;
+  min-height: 100vh;
+  background: linear-gradient(rgba(227, 242, 253, 0.9), rgba(227, 242, 253, 0.9)),
+              url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="safety-pattern" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="1" fill="%234FC3F7" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23safety-pattern)"/></svg>');
+  background-attachment: fixed;
+  background-size: cover;
+  overflow-x: hidden;
+  padding-right: 8px; /* Account for scrollbar */
+}
+
+/* Hero Section */
+.heroSection {
+  background: linear-gradient(135deg, #4FC3F7 0%, #0288D1 100%);
+  padding: 80px 1rem;
+  text-align: center;
+  color: white;
+  width: 100%;
+  box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
+}
+
+.heroSection::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="hero-pattern" x="0" y="0" width="30" height="30" patternUnits="userSpaceOnUse"><path d="M15,5 L25,15 L15,25 L5,15 Z" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1"/></pattern></defs><rect width="100" height="100" fill="url(%23hero-pattern)"/></svg>');
+  opacity: 0.3;
+}
+
+.heroContent {
+  max-width: 800px;
+  margin: 0 auto;
+  width: 100%;
+  box-sizing: border-box;
+  position: relative;
+  z-index: 1;
+}
+
+.heroTitle {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  color: white;
+  word-wrap: break-word;
+}
+
+.heroSubtitle {
+  font-size: 1.2rem;
+  font-weight: 300;
+  line-height: 1.6;
+  opacity: 0.95;
+  color: white;
+  word-wrap: break-word;
+}
+
+/* Content Wrapper */
+.contentWrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 1rem 60px 1rem;
+  width: calc(100% - 8px); /* Account for scrollbar */
+  box-sizing: border-box;
+}
+
+/* Section Styles */
+.section {
+  margin-bottom: 60px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  padding: 40px 2rem;
+  box-shadow: 0 8px 32px rgba(79, 195, 247, 0.15);
+  border: 2px solid rgba(79, 195, 247, 0.2);
+  transition: all 0.3s ease;
+  width: 100%;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.section:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(79, 195, 247, 0.25);
+  border-color: rgba(79, 195, 247, 0.4);
+}
+
+.sectionTitle {
+  color: #0288D1;
+  font-size: 2.2rem;
+  font-weight: 600;
+  margin-bottom: 30px;
+  text-align: center;
+  position: relative;
+  word-wrap: break-word;
+}
+
+.sectionTitle::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, #4FC3F7, #4DD0E1);
+  border-radius: 2px;
+}
+
+/* Subsection Styles */
+.subsection {
+  margin-bottom: 40px;
+  text-align: center;
+  width: 100%;
+}
+
+.subsectionTitle {
+  color: #0288D1;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 15px;
+  text-align: center;
+  word-wrap: break-word;
+}
+
+.paragraph {
+  color: #444;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  margin-bottom: 20px;
+  text-align: center;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+/* Universal Card Styles - All boxes have same dimensions */
+.typeCard,
+.tipCard,
+.workplaceTip,
+.safetyItem,
+.onlineTip,
+.actionCard,
+.empowermentCard {
+  background: linear-gradient(135deg, #ffffff 0%, #f8fdff 100%);
+  padding: 25px 20px;
+  border-radius: 12px;
+  border: 2px solid #4FC3F7;
+  box-shadow: 0 4px 16px rgba(79, 195, 247, 0.1);
+  transition: all 0.3s ease;
+  text-align: center;
+  width: 100%;
+  box-sizing: border-box;
+  height: 220px; /* Fixed height for all cards */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.typeCard::before,
+.tipCard::before,
+.workplaceTip::before,
+.safetyItem::before,
+.onlineTip::before,
+.actionCard::before,
+.empowermentCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #4FC3F7, #4DD0E1);
+}
+
+.typeCard:hover,
+.tipCard:hover,
+.workplaceTip:hover,
+.safetyItem:hover,
+.onlineTip:hover,
+.actionCard:hover,
+.empowermentCard:hover {
+  transform: translateY(-5px);
+  border-color: #0288D1;
+  box-shadow: 0 8px 25px rgba(79, 195, 247, 0.25);
+  background: linear-gradient(135deg, #E3F2FD 0%, #ffffff 100%);
+}
+
+/* Card Icon Styles */
+.cardIcon {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+/* Card Title Styles */
+.typeTitle,
+.tipTitle,
+.actionTitle {
+  color: #0288D1;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 12px;
+  word-wrap: break-word;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.workplaceTip h4,
+.safetyItem h4,
+.onlineTip h4,
+.empowermentCard h4 {
+  color: #0288D1;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 12px;
+  word-wrap: break-word;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+/* Card Paragraph Styles */
+.typeCard p,
+.tipCard p,
+.workplaceTip p,
+.safetyItem p,
+.onlineTip p,
+.actionCard p,
+.empowermentCard p {
+  color: #555;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  text-align: center;
+  margin: 0;
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 5px;
+}
+
+/* Grid Layouts - All grids centered */
+.harassmentTypes {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin-top: 30px;
+  width: 100%;
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: border-box;
+  justify-items: center;
+  place-items: center;
+}
+
+.tipsGrid,
+.workplaceTips,
+.publicSafetyGrid,
+.actionSteps,
+.empowermentContent,
+.onlineSafetyContent {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-top: 20px;
+  width: 100%;
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: border-box;
+  justify-items: center;
+  place-items: center;
+}
+
+/* Action List Styles */
+.actionList {
+  margin: 15px 0 0 0;
+  padding-left: 0;
+  list-style: none;
+  text-align: center;
+  width: 100%;
+}
+
+.actionList li {
+  color: #555;
+  margin-bottom: 8px;
+  line-height: 1.5;
+  font-size: 0.9rem;
+  padding: 3px 0;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  text-align: center;
+}
+
+.actionList li::before {
+  content: '•';
+  color: #4FC3F7;
+  font-weight: bold;
+  margin-right: 8px;
+}
+
+/* Emergency Section */
+.emergencySection {
+  background: linear-gradient(135deg, #0288D1 0%, #4FC3F7 100%);
+  padding: 50px 1rem;
+  border-radius: 15px;
+  margin-top: 40px;
+  text-align: center;
+  color: white;
+  width: 100%;
+  box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+}
+
+.emergencySection::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="emergency-pattern" x="0" y="0" width="25" height="25" patternUnits="userSpaceOnUse"><circle cx="12.5" cy="12.5" r="1" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23emergency-pattern)"/></svg>');
+  opacity: 0.4;
+}
+
+.emergencyTitle {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 40px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  color: white;
+  word-wrap: break-word;
+  position: relative;
+  z-index: 1;
+  text-align: center;
+}
+
+.emergencyNumbers {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1.25rem;
+  max-width: 800px;
+  margin: 0 auto;
+  width: 100%;
+  box-sizing: border-box;
+  justify-items: center;
+  place-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+.emergencyCard {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(15px);
+  padding: 25px 15px;
+  border-radius: 12px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  transition: all 0.3s ease;
+  text-align: center;
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 160px; /* Fixed height for emergency cards */
+}
+
+.emergencyCard:hover {
+  background: rgba(255, 255, 255, 0.35);
+  transform: translateY(-3px);
+  border-color: rgba(255, 255, 255, 0.5);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.emergencyIcon {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.emergencyNumber {
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: white;
+  word-wrap: break-word;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.emergencyWebsite {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: white;
+  word-break: break-all;
+  overflow-wrap: break-word;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.emergencyLabel {
+  font-size: 0.9rem;
+  opacity: 0.9;
+  font-weight: 400;
+  color: white;
+  word-wrap: break-word;
+  text-align: center;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .harassmentTypes {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    max-width: 900px;
+    justify-items: center;
+    place-items: center;
+  }
+}
+
+@media (max-width: 1024px) {
+  .contentWrapper {
+    padding: 50px 1rem 50px 1rem;
+    width: calc(100% - 8px);
+  }
+  
+  .section {
+    padding: 35px 1.5rem;
+  }
+  
+  .heroSection {
+    padding: 70px 1rem;
+  }
+  
+  .harassmentTypes {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    max-width: 700px;
+    justify-items: center;
+    place-items: center;
+  }
+  
+  .tipsGrid,
+  .workplaceTips,
+  .publicSafetyGrid,
+  .actionSteps,
+  .empowermentContent,
+  .onlineSafetyContent {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .safetyTipsContainer {
+    padding-right: 0;
+  }
+  
+  .contentWrapper {
+    width: 100%;
+    padding: 40px 0.75rem 40px 0.75rem;
+  }
+  
+  .heroSection {
+    padding: 60px 1rem;
+  }
+  
+  .heroTitle {
+    font-size: 2.2rem;
+  }
+  
+  .heroSubtitle {
+    font-size: 1.1rem;
+  }
+  
+  .section {
+    padding: 25px 1rem;
+    margin-bottom: 40px;
+  }
+  
+  .sectionTitle {
+    font-size: 1.8rem;
+  }
+  
+  .typeCard,
+  .tipCard,
+  .workplaceTip,
+  .safetyItem,
+  .onlineTip,
+  .actionCard,
+  .empowermentCard {
+    height: 200px; /* Slightly smaller on mobile but still uniform */
+    padding: 20px 15px;
+  }
+  
+  .harassmentTypes,
+  .tipsGrid,
+  .workplaceTips,
+  .publicSafetyGrid,
+  .actionSteps,
+  .empowermentContent,
+  .onlineSafetyContent {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    max-width: 100%;
+    gap: 1.25rem;
+    justify-items: center;
+    place-items: center;
+  }
+  
+  .emergencyNumbers {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 100%;
+    gap: 1rem;
+    justify-items: center;
+    place-items: center;
+  }
+  
+  .emergencyCard {
+    height: 140px;
+  }
+  
+  .emergencySection {
+    padding: 40px 1rem;
+  }
+  
+  .emergencyTitle {
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .heroSection {
+    padding: 50px 0.75rem;
+  }
+  
+  .heroTitle {
+    font-size: 1.8rem;
+  }
+  
+  .heroSubtitle {
+    font-size: 1rem;
+  }
+  
+  .contentWrapper {
+    padding: 30px 0.5rem 30px 0.5rem;
+  }
+  
+  .section {
+    padding: 20px 0.75rem;
+    margin-bottom: 30px;
+  }
+  
+  .sectionTitle {
+    font-size: 1.5rem;
+  }
+  
+  .subsectionTitle {
+    font-size: 1.3rem;
+  }
+  
+  .paragraph {
+    font-size: 1rem;
+  }
+  
+  .harassmentTypes,
+  .tipsGrid,
+  .workplaceTips,
+  .publicSafetyGrid,
+  .actionSteps,
+  .empowermentContent,
+  .onlineSafetyContent {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    justify-items: center;
+    place-items: center;
+  }
+  
+  .emergencyNumbers {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    justify-items: center;
+    place-items: center;
+  }
+  
+  .typeCard,
+  .tipCard,
+  .workplaceTip,
+  .safetyItem,
+  .onlineTip,
+  .actionCard,
+  .empowermentCard {
+    height: 180px;
+    padding: 18px 12px;
+  }
+  
+  .emergencyCard {
+    height: 130px;
+    padding: 20px 10px;
+  }
+  
+  .cardIcon {
+    font-size: 2rem;
+    margin-bottom: 10px;
+  }
+  
+  .emergencyIcon {
+    font-size: 1.5rem;
+    margin-bottom: 8px;
+  }
+  
+  .typeTitle,
+  .tipTitle,
+  .actionTitle,
+  .workplaceTip h4,
+  .safetyItem h4,
+  .onlineTip h4,
+  .empowermentCard h4 {
+    font-size: 1rem;
+    margin-bottom: 8px;
+  }
+  
+  .typeCard p,
+  .tipCard p,
+  .workplaceTip p,
+  .safetyItem p,
+  .onlineTip p,
+  .actionCard p,
+  .empowermentCard p {
+    font-size: 0.9rem;
+    line-height: 1.4;
+  }
+  
+  .emergencyNumber {
+    font-size: 1.4rem;
+  }
+  
+  .emergencyWebsite {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .heroSection {
+    padding: 40px 0.5rem;
+  }
+  
+  .heroTitle {
+    font-size: 1.6rem;
+  }
+  
+  .heroSubtitle {
+    font-size: 0.9rem;
+  }
+  
+  .contentWrapper {
+    padding: 25px 0.25rem 25px 0.25rem;
+  }
+  
+  .section {
+    padding: 15px 0.5rem;
+  }
+  
+  .sectionTitle {
+    font-size: 1.3rem;
+  }
+  
+  .subsectionTitle {
+    font-size: 1.1rem;
+  }
+  
+  .typeCard,
+  .tipCard,
+  .workplaceTip,
+  .safetyItem,
+  .onlineTip,
+  .actionCard,
+  .empowermentCard {
+    height: 160px;
+    padding: 15px 10px;
+  }
+  
+  .emergencyCard {
+    height: 120px;
+    padding: 15px 8px;
+  }
+  
+  .cardIcon {
+    font-size: 1.8rem;
+    margin-bottom: 8px;
+  }
+  
+  .emergencyIcon {
+    font-size: 1.2rem;
+    margin-bottom: 6px;
+  }
+  
+  .typeTitle,
+  .tipTitle,
+  .actionTitle,
+  .workplaceTip h4,
+  .safetyItem h4,
+  .onlineTip h4,
+  .empowermentCard h4 {
+    font-size: 0.95rem;
+    margin-bottom: 6px;
+  }
+  
+  .typeCard p,
+  .tipCard p,
+  .workplaceTip p,
+  .safetyItem p,
+  .onlineTip p,
+  .actionCard p,
+  .empowermentCard p {
+    font-size: 0.85rem;
+    line-height: 1.3;
+  }
+  
+  .emergencyTitle {
+    font-size: 1.4rem;
+  }
+  
+  .emergencyNumber {
+    font-size: 1.2rem;
+  }
+  
+  .emergencyWebsite {
+    font-size: 0.9rem;
+  }
+  
+  .emergencyLabel {
+    font-size: 0.8rem;
+  }
+}
+
+/* Additional overflow prevention */
+.safetyTipsContainer * {
+  max-width: 100%;
+}
+
+/* Ensure no element can cause horizontal scroll */
+img, 
+video, 
+iframe, 
+embed, 
+object {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Text overflow handling */
+h1, h2, h3, h4, h5, h6, p, span, div, li {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
+}
+
+/* Focus and Accessibility */
+.emergencyCard:focus,
+.typeCard:focus,
+.tipCard:focus,
+.workplaceTip:focus,
+.safetyItem:focus,
+.onlineTip:focus,
+.actionCard:focus,
+.empowermentCard:focus {
+  outline: 3px solid #4FC3F7;
+  outline-offset: 2px;
+}
+
+/* High Contrast Mode Support */
+@media (prefers-contrast: high) {
+  .typeCard,
+  .tipCard,
+  .workplaceTip,
+  .safetyItem,
+  .actionCard,
+  .empowermentCard,
+  .onlineTip {
+    border-width: 3px;
+  }
+  
+  .section {
+    border-width: 3px;
+  }
+  
+  .emergencySection {
+    border-width: 4px;
+  }
+}
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+  .section,
+  .typeCard,
+  .tipCard,
+  .workplaceTip,
+  .safetyItem,
+  .onlineTip,
+  .actionCard,
+  .empowermentCard,
+  .emergencyCard {
+    transition: none;
+  }
+  
+  .section:hover,
+  .typeCard:hover,
+  .tipCard:hover,
+  .workplaceTip:hover,
+  .safetyItem:hover,
+  .actionCard:hover,
+  .empowermentCard:hover,
+  .emergencyCard:hover,
+  .onlineTip:hover {
+    transform: none;
+  }
+}
+
+/* Enhanced visual effects */
+.typeCard:hover .cardIcon,
+.tipCard:hover .cardIcon,
+.workplaceTip:hover .cardIcon,
+.safetyItem:hover .cardIcon,
+.onlineTip:hover .cardIcon,
+.actionCard:hover .cardIcon,
+.empowermentCard:hover .cardIcon {
+  transform: scale(1.1);
+  transition: transform 0.3s ease;
+}
+
+.emergencyCard:hover .emergencyIcon {
+  transform: scale(1.1);
+  transition: transform 0.3s ease;
+}
+
+/* Scrollbar spacing adjustments */
+@media (hover: hover) {
+  .safetyTipsContainer {
+    padding-right: 8px;
+  }
+  
+  .contentWrapper {
+    width: calc(100% - 8px);
+  }
+}
+
+/* Grid center alignment for all layouts */
+.harassmentTypes,
+.tipsGrid,
+.workplaceTips,
+.publicSafetyGrid,
+.actionSteps,
+.empowermentContent,
+.onlineSafetyContent,
+.emergencyNumbers {
+  justify-content: center;
+  align-content: center;
+}
+
+/* Ensure all cards are centered within their grid cells */
+.typeCard,
+.tipCard,
+.workplaceTip,
+.safetyItem,
+.onlineTip,
+.actionCard,
+.empowermentCard,
+.emergencyCard {
+  margin: 0 auto;
+  justify-self: center;
+  align-self: center;
+}
