@@ -663,7 +663,6 @@ const services = [
           </div>
         </section>
       </div>
-      <Footer />
     </>
   );
 };

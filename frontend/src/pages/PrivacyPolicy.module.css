@@ -1,0 +1,774 @@
+/* src/pages/PrivacyPolicy.module.css */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  width: 100%;
+  overflow-x: hidden;
+  scrollbar-gutter: stable;
+}
+
+body {
+  width: 100%;
+  overflow-x: hidden;
+  scrollbar-width: thin;
+  scrollbar-color: #4FC3F7 #E3F2FD;
+}
+
+/* Custom Scrollbar for Webkit browsers */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #E3F2FD;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #4FC3F7, #0288D1);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #0288D1, #4FC3F7);
+}
+
+.privacyContainer {
+  width: 100%;
+  min-height: 100vh;
+  background: linear-gradient(rgba(227, 242, 253, 0.9), rgba(227, 242, 253, 0.9)),
+              url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="privacy-pattern" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="1" fill="%234FC3F7" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23privacy-pattern)"/></svg>');
+  background-attachment: fixed;
+  background-size: cover;
+  overflow-x: hidden;
+  padding-right: 8px; /* Account for scrollbar */
+}
+
+/* Hero Section */
+.heroSection {
+  background: linear-gradient(135deg, #4FC3F7 0%, #0288D1 100%);
+  padding: 80px 1rem;
+  text-align: center;
+  color: white;
+  width: 100%;
+  box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
+}
+
+.heroSection::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="hero-pattern" x="0" y="0" width="30" height="30" patternUnits="userSpaceOnUse"><path d="M15,5 L25,15 L15,25 L5,15 Z" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1"/></pattern></defs><rect width="100" height="100" fill="url(%23hero-pattern)"/></svg>');
+  opacity: 0.3;
+}
+
+.heroContent {
+  max-width: 800px;
+  margin: 0 auto;
+  width: 100%;
+  box-sizing: border-box;
+  position: relative;
+  z-index: 1;
+}
+
+.heroTitle {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  color: white;
+  word-wrap: break-word;
+}
+
+.heroSubtitle {
+  font-size: 1.2rem;
+  font-weight: 300;
+  line-height: 1.6;
+  opacity: 0.95;
+  color: white;
+  word-wrap: break-word;
+}
+
+/* Content Wrapper */
+.contentWrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 1rem 60px 1rem;
+  width: calc(100% - 8px); /* Account for scrollbar */
+  box-sizing: border-box;
+}
+
+/* Section Styles */
+.section {
+  margin-bottom: 60px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  padding: 40px 2rem;
+  box-shadow: 0 8px 32px rgba(79, 195, 247, 0.15);
+  border: 2px solid rgba(79, 195, 247, 0.2);
+  transition: all 0.3s ease;
+  width: 100%;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.section:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(79, 195, 247, 0.25);
+  border-color: rgba(79, 195, 247, 0.4);
+}
+
+.sectionTitle {
+  color: #0288D1;
+  font-size: 2.2rem;
+  font-weight: 600;
+  margin-bottom: 30px;
+  text-align: center;
+  position: relative;
+  word-wrap: break-word;
+}
+
+.sectionTitle::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, #4FC3F7, #4DD0E1);
+  border-radius: 2px;
+}
+
+/* Universal Card Styles - All boxes have same dimensions */
+.infoCard,
+.usageCard,
+.protectionCard,
+.rightCard,
+.thirdPartyCard {
+  background: linear-gradient(135deg, #ffffff 0%, #f8fdff 100%);
+  padding: 25px 20px;
+  border-radius: 12px;
+  border: 2px solid #4FC3F7;
+  box-shadow: 0 4px 16px rgba(79, 195, 247, 0.1);
+  transition: all 0.3s ease;
+  text-align: center;
+  width: 100%;
+  box-sizing: border-box;
+  height: 220px; /* Fixed height for all cards */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.infoCard::before,
+.usageCard::before,
+.protectionCard::before,
+.rightCard::before,
+.thirdPartyCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #4FC3F7, #4DD0E1);
+}
+
+.infoCard:hover,
+.usageCard:hover,
+.protectionCard:hover,
+.rightCard:hover,
+.thirdPartyCard:hover {
+  transform: translateY(-5px);
+  border-color: #0288D1;
+  box-shadow: 0 8px 25px rgba(79, 195, 247, 0.25);
+  background: linear-gradient(135deg, #E3F2FD 0%, #ffffff 100%);
+}
+
+/* Card Icon Styles */
+.cardIcon {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+/* Card Title Styles */
+.cardTitle {
+  color: #0288D1;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 12px;
+  word-wrap: break-word;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+/* Card Paragraph Styles */
+.infoCard p,
+.usageCard p,
+.protectionCard p,
+.rightCard p,
+.thirdPartyCard p {
+  color: #555;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  text-align: center;
+  margin: 0;
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 5px;
+}
+
+/* Grid Layouts - All grids centered */
+.infoGrid,
+.usageGrid,
+.protectionGrid,
+.rightsGrid,
+.thirdPartyGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-top: 20px;
+  width: 100%;
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: border-box;
+  justify-items: center;
+  place-items: center;
+}
+
+/* Contact Section */
+.contactSection {
+  background: linear-gradient(135deg, #0288D1 0%, #4FC3F7 100%);
+  padding: 50px 1rem;
+  border-radius: 15px;
+  margin-top: 40px;
+  text-align: center;
+  color: white;
+  width: 100%;
+  box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+}
+
+.contactSection::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="contact-pattern" x="0" y="0" width="25" height="25" patternUnits="userSpaceOnUse"><circle cx="12.5" cy="12.5" r="1" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23contact-pattern)"/></svg>');
+  opacity: 0.4;
+}
+
+.contactTitle {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 40px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  color: white;
+  word-wrap: break-word;
+  position: relative;
+  z-index: 1;
+  text-align: center;
+}
+
+.contactContent {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.25rem;
+  max-width: 800px;
+  margin: 0 auto 40px auto;
+  width: 100%;
+  box-sizing: border-box;
+  justify-items: center;
+  place-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+.contactCard {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(15px);
+  padding: 25px 15px;
+  border-radius: 12px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  transition: all 0.3s ease;
+  text-align: center;
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 160px; /* Fixed height for contact cards */
+}
+
+.contactCard:hover {
+  background: rgba(255, 255, 255, 0.35);
+  transform: translateY(-3px);
+  border-color: rgba(255, 255, 255, 0.5);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.contactIcon {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.contactMethod {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: white;
+  word-wrap: break-word;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.contactInfo {
+  font-size: 0.95rem;
+  opacity: 0.9;
+  font-weight: 400;
+  color: white;
+  word-wrap: break-word;
+  text-align: center;
+  line-height: 1.4;
+}
+
+.updateInfo {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  margin-top: 30px;
+  padding-top: 30px;
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.updateInfo p {
+  color: white;
+  font-size: 0.95rem;
+  margin-bottom: 10px;
+  opacity: 0.9;
+  line-height: 1.5;
+}
+
+.updateInfo strong {
+  font-weight: 600;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .contentWrapper {
+    padding: 50px 1rem 50px 1rem;
+    width: calc(100% - 8px);
+  }
+  
+  .section {
+    padding: 35px 1.5rem;
+  }
+  
+  .heroSection {
+    padding: 70px 1rem;
+  }
+  
+  .infoGrid,
+  .usageGrid,
+  .protectionGrid,
+  .rightsGrid,
+  .thirdPartyGrid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .privacyContainer {
+    padding-right: 0;
+  }
+  
+  .contentWrapper {
+    width: 100%;
+    padding: 40px 0.75rem 40px 0.75rem;
+  }
+  
+  .heroSection {
+    padding: 60px 1rem;
+  }
+  
+  .heroTitle {
+    font-size: 2.2rem;
+  }
+  
+  .heroSubtitle {
+    font-size: 1.1rem;
+  }
+  
+  .section {
+    padding: 25px 1rem;
+    margin-bottom: 40px;
+  }
+  
+  .sectionTitle {
+    font-size: 1.8rem;
+  }
+  
+  .infoCard,
+  .usageCard,
+  .protectionCard,
+  .rightCard,
+  .thirdPartyCard {
+    height: 200px; /* Slightly smaller on mobile but still uniform */
+    padding: 20px 15px;
+  }
+  
+  .infoGrid,
+  .usageGrid,
+  .protectionGrid,
+  .rightsGrid,
+  .thirdPartyGrid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    max-width: 100%;
+    gap: 1.25rem;
+    justify-items: center;
+    place-items: center;
+  }
+  
+  .contactContent {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    max-width: 100%;
+    gap: 1rem;
+    justify-items: center;
+    place-items: center;
+  }
+  
+  .contactCard {
+    height: 140px;
+  }
+  
+  .contactSection {
+    padding: 40px 1rem;
+  }
+  
+  .contactTitle {
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .heroSection {
+    padding: 50px 0.75rem;
+  }
+  
+  .heroTitle {
+    font-size: 1.8rem;
+  }
+  
+  .heroSubtitle {
+    font-size: 1rem;
+  }
+  
+  .contentWrapper {
+    padding: 30px 0.5rem 30px 0.5rem;
+  }
+  
+  .section {
+    padding: 20px 0.75rem;
+    margin-bottom: 30px;
+  }
+  
+  .sectionTitle {
+    font-size: 1.5rem;
+  }
+  
+  .infoGrid,
+  .usageGrid,
+  .protectionGrid,
+  .rightsGrid,
+  .thirdPartyGrid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    justify-items: center;
+    place-items: center;
+  }
+  
+  .contactContent {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    justify-items: center;
+    place-items: center;
+  }
+  
+  .infoCard,
+  .usageCard,
+  .protectionCard,
+  .rightCard,
+  .thirdPartyCard {
+    height: 180px;
+    padding: 18px 12px;
+  }
+  
+  .contactCard {
+    height: 130px;
+    padding: 20px 10px;
+  }
+  
+  .cardIcon {
+    font-size: 2rem;
+    margin-bottom: 10px;
+  }
+  
+  .contactIcon {
+    font-size: 1.5rem;
+    margin-bottom: 8px;
+  }
+  
+  .cardTitle {
+    font-size: 1rem;
+    margin-bottom: 8px;
+  }
+  
+  .contactMethod {
+    font-size: 1.1rem;
+  }
+  
+  .infoCard p,
+  .usageCard p,
+  .protectionCard p,
+  .rightCard p,
+  .thirdPartyCard p {
+    font-size: 0.9rem;
+    line-height: 1.4;
+  }
+  
+  .contactInfo {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .heroSection {
+    padding: 40px 0.5rem;
+  }
+  
+  .heroTitle {
+    font-size: 1.6rem;
+  }
+  
+  .heroSubtitle {
+    font-size: 0.9rem;
+  }
+  
+  .contentWrapper {
+    padding: 25px 0.25rem 25px 0.25rem;
+  }
+  
+  .section {
+    padding: 15px 0.5rem;
+  }
+  
+  .sectionTitle {
+    font-size: 1.3rem;
+  }
+  
+  .infoCard,
+  .usageCard,
+  .protectionCard,
+  .rightCard,
+  .thirdPartyCard {
+    height: 160px;
+    padding: 15px 10px;
+  }
+  
+  .contactCard {
+    height: 120px;
+    padding: 15px 8px;
+  }
+  
+  .cardIcon {
+    font-size: 1.8rem;
+    margin-bottom: 8px;
+  }
+  
+  .contactIcon {
+    font-size: 1.2rem;
+    margin-bottom: 6px;
+  }
+  
+  .cardTitle {
+    font-size: 0.95rem;
+    margin-bottom: 6px;
+  }
+  
+  .contactMethod {
+    font-size: 1rem;
+  }
+  
+  .infoCard p,
+  .usageCard p,
+  .protectionCard p,
+  .rightCard p,
+  .thirdPartyCard p {
+    font-size: 0.85rem;
+    line-height: 1.3;
+  }
+  
+  .contactInfo {
+    font-size: 0.85rem;
+  }
+  
+  .contactTitle {
+    font-size: 1.4rem;
+  }
+  
+  .updateInfo p {
+    font-size: 0.85rem;
+  }
+}
+
+/* Additional overflow prevention */
+.privacyContainer * {
+  max-width: 100%;
+}
+
+/* Ensure no element can cause horizontal scroll */
+img, 
+video, 
+iframe, 
+embed, 
+object {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Text overflow handling */
+h1, h2, h3, h4, h5, h6, p, span, div, li {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
+}
+
+/* Focus and Accessibility */
+.infoCard:focus,
+.usageCard:focus,
+.protectionCard:focus,
+.rightCard:focus,
+.thirdPartyCard:focus,
+.contactCard:focus {
+  outline: 3px solid #4FC3F7;
+  outline-offset: 2px;
+}
+
+/* High Contrast Mode Support */
+@media (prefers-contrast: high) {
+  .infoCard,
+  .usageCard,
+  .protectionCard,
+  .rightCard,
+  .thirdPartyCard {
+    border-width: 3px;
+  }
+  
+  .section {
+    border-width: 3px;
+  }
+  
+  .contactSection {
+    border-width: 4px;
+  }
+}
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+  .section,
+  .infoCard,
+  .usageCard,
+  .protectionCard,
+  .rightCard,
+  .thirdPartyCard,
+  .contactCard {
+    transition: none;
+  }
+  
+  .section:hover,
+  .infoCard:hover,
+  .usageCard:hover,
+  .protectionCard:hover,
+  .rightCard:hover,
+  .thirdPartyCard:hover,
+  .contactCard:hover {
+    transform: none;
+  }
+}
+
+/* Scrollbar spacing adjustments */
+@media (hover: hover) {
+  .privacyContainer {
+    padding-right: 8px;
+  }
+  
+  .contentWrapper {
+    width: calc(100% - 8px);
+  }
+}
+
+/* Grid center alignment for all layouts */
+.infoGrid,
+.usageGrid,
+.protectionGrid,
+.rightsGrid,
+.thirdPartyGrid,
+.contactContent {
+  justify-content: center;
+  align-content: center;
+}
+
+/* Ensure all cards are centered within their grid cells */
+.infoCard,
+.usageCard,
+.protectionCard,
+.rightCard,
+.thirdPartyCard,
+.contactCard {
+  margin: 0 auto;
+  justify-self: center;
+  align-self: center;
+}
+
+/* Enhanced visual effects */
+.infoCard:hover .cardIcon,
+.usageCard:hover .cardIcon,
+.protectionCard:hover .cardIcon,
+.rightCard:hover .cardIcon,
+.thirdPartyCard:hover .cardIcon {
+  transform: scale(1.1);
+  transition: transform 0.3s ease;
+}
+
+.contactCard:hover .contactIcon {
+  transform: scale(1.1);
+  transition: transform 0.3s ease;
+}
