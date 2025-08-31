@@ -140,7 +140,7 @@ body {
 }
 
 
-.header-content {
+/* .header-content {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 2rem;
@@ -149,6 +149,14 @@ body {
   align-items: center;
   gap: 2rem;
   color:white;
+} */
+
+.header-content {
+  display: flex;
+  justify-content: space-between; /* logo left, toggle right */
+  align-items: center;
+  flex-wrap: wrap; /* allows stacking on smaller screens */
+  padding: 0 1rem;
 }
 
 .logo-section {
@@ -177,8 +185,12 @@ body {
 }
 
 .title-section {
+  flex: 1;
   display: flex;
   flex-direction: column;
+  align-items: center;   /* centers horizontally */
+  justify-content: center; /* centers vertically */
+  text-align: center;
 }
 
 .page-title {
@@ -187,8 +199,9 @@ body {
   font-size: 2rem;
   margin: 0;
   animation: fadeInDown 0.8s ease-out;
-  background: white;
+  color: white;
   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  color: white;
 }
 
 .page-subtitle {

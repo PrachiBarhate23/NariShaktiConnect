@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
   return (
@@ -272,11 +273,11 @@ const Footer = () => {
             <div className="footer-bottom">
               <div className="footer-bottom-content">
                 <p>&copy; 2025 Nari Shakti Connect. All rights reserved.</p>
-                {/* <div className="footer-bottom-links">
-                  <a href="./PrivacyPolicy">Privacy Policy</a>
-                  <a href="./TermsOfService">Terms of Service</a>
-                  <a href="#accessibility">Accessibility</a>
-                </div> */}
+                <div className="footer-bottom-links">
+                  <Link to="/privacy-policy">Privacy Policy</Link>
+                  <Link to="/terms-of-service">Terms of Service</Link>
+                  <Link to="/accessibility">Accessibility</Link>
+                </div>
               </div>
             </div>
           </div>
